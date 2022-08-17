@@ -2,7 +2,12 @@
   <div
     class="container mx-auto text-center mt-10 flex flex-row justify-center space-x-3"
   >
-    <InputGet :name="name" :showName="showName" v-model="searchText" />
+    <InputGet
+      :name="name"
+      :type="type"
+      :showName="showName"
+      v-model="searchText"
+    />
     <ButtonEnviar @enviar="enviar()" />
   </div>
   <TableIndex :enderecos="[$store.state.enderecosLogradouro]" />
@@ -19,6 +24,7 @@ export default {
       name: "logradouro",
       showName: "Logradouro",
       searchText: "",
+      type: "text",
     };
   },
   methods: {

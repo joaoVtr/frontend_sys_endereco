@@ -2,7 +2,12 @@
   <div
     class="container mx-auto text-center mt-10 flex flex-row justify-center space-x-3"
   >
-    <InputGet :name="name" :showName="showName" v-model="searchText" />
+    <InputGet
+      :name="name"
+      :showName="showName"
+      :type="type"
+      v-model="searchText"
+    />
 
     <ButtonEnviar @enviar="enviar()" />
   </div>
@@ -20,6 +25,7 @@ export default {
       name: "CEP",
       showName: "CEP",
       searchText: "",
+      type: "number",
       enderecos: [],
     };
   },
